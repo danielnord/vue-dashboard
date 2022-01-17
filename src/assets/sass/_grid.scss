@@ -1,7 +1,7 @@
 .grid {
     border: 2px solid #b00;
     height: 200px;
-    &:not(.gallery) {
+    &.readOnly {
         .header {
             cursor: default;
         }
@@ -16,7 +16,15 @@
     }
 }
 
+.card {
+    border: 0px;
+    border-radius: 0;
+    box-shadow: $sip_widget_shadow;
+    height: 100%;
+}
+
 .widget {
+
     h3 {
         margin-top: 0;
     }

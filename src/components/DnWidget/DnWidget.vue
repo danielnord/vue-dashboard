@@ -81,6 +81,7 @@ export default {
                 return
             }
 
+            console.log('dragStart', evt.target, this.dragSelector)
             if (!utils.matchesSelector(evt.target, this.dragSelector)) {
                 return
             }
@@ -229,6 +230,7 @@ export default {
 
 <style lang="scss">
 @import "../../assets/sass/colors";
+@import "../../assets/sass/grid";
     .dn-grid-widget {
         position: absolute;
         z-index: 1;

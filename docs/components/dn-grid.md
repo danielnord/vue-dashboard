@@ -24,4 +24,7 @@ Within the dn-widget the slot is filled with a component and is using widget.typ
 
 ## props
 
+## emitters
+@changed
+
 ...

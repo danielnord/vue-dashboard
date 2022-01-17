@@ -1,14 +1,27 @@
 <template>
     <div>
-        <h1>{{ data.title }}</h1>
-        {{ data }}
+        <dn-widgetBase
+            @didClick="didClick"
+            :key="data.id"
+            :widget="data"
+            :hasValidData="true"
+            ref="widgetbase">
+            {{ data }}
+        </dn-widgetBase>
     </div>
 </template>
 
 <script>
-  export default {
+export default {
     props: {
         data: { type: Object, required: true }
+    },
+    methods: {
+        didClick() {
+            if (!this.hasValidUrl) {
+                this.$emit('showProperties')
+            }
+        }
     }
-  }
+}
 </script>

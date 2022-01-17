@@ -50,4 +50,28 @@ export default class Widget {
             }
         })
     }
+
+    /**
+     * Returns a copy as a Widget object
+    */
+    copy() {
+        return new Widget(JSON.parse(JSON.stringify(this)))
+    }
+
+    /**
+     * Returns true if it has valid data
+     */
+     hasValidData() {
+        if (!this.validators) {
+            return
+        }
+
+        for (let i = 0; i < this.validators.length; i++) {
+            if (!this.validators[i]()) {
+                return false
+            }
+        }
+
+        return true
+    }
 }

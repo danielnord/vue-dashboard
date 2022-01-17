@@ -2,7 +2,7 @@
     <div>
         <Grid-Container class="grid container"
             ref="layout"
-            :class="{gallery: gallery.active}"
+            :class="{readOnly: readOnly}"
             :layout.sync="widgets.current"
             :cellSize="cellSize"
             :maxColumnCount="maxColumnCount"
@@ -17,8 +17,8 @@
                     @removeClicked="removeWidget(w.id)"
                     @editClicked="editWidget(w)"
                     @viewClicked="editWidget(w, true)"
-                    :readOnly="!gallery.active"
-                    :highlight="currentWidget && w.id === currentWidget.id && gallery.active"
+                    :readOnly="readOnly"
+                    :highlight="currentWidget && w.id === currentWidget.id && !readOnly"
                 >
                     <div class="card">
                         <component class="widget-wrapper"
@@ -52,7 +52,8 @@ export default {
             default() {
                 return {
                     w: 100,
-                    h: 100
+                    h: 100,
+                    margin: 16
                 }
             }
         },
@@ -71,6 +72,10 @@ export default {
         dashboardType: {
             type: String,
             default: null
+        },
+        readOnly: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
@@ -84,8 +89,7 @@ export default {
             },
             gallery: {
                 active: false,
-                showCustomize: false,
-                readOnly: false
+                showCustomize: false
             }
         }
     },
@@ -100,16 +104,26 @@ export default {
         editWidget(widget, readOnly) {
             this.currentWidget = widget
             this.gallery.showCustomize = true
-            this.gallery.readOnly = false
-            if (readOnly) {
-                this.gallery.readOnly = true
+        },
+        showProperties(data) {
+            if (!this.gallery.active) {
+                // this.toggleGallery(true)
+            }
+            this.currentWidget = data.widget
+            this.gallery.showCustomize = true
+        }
+    },
+    watch: {
+        'widgets.current': {
+            handler(to, from) {
+                this.$emit('changed', to)
             }
         }
     }
 }
 </script>
 
-<style scoped="" lang="scss">
+<style scoped lang="scss">
 @import "../../assets/sass/colors.scss";
 @import "../../assets/sass/grid.scss";
 .card {

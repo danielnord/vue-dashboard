@@ -50,7 +50,8 @@ export default {
             default() {
                 return {
                     w: 100,
-                    h: 100
+                    h: 100,
+                    margin: 16
                 }
             }
         },
@@ -62,13 +63,9 @@ export default {
             type: Number,
             default: Infinity
         },
-        margin: {
-            type: Number,
-            default: 5
-        },
         outerMargin: {
             type: Number,
-            default: 0
+            default: 16
         },
         bubbleUp: {
             type: Boolean,
@@ -134,7 +131,7 @@ export default {
     },
     mounted() {
         this.isMounted = true
-        let boxIds = this.$children.map(box => box.$props.boxId)
+        let boxIds = this.$children.map(box => box.$props.widget.id)
         this.createBoxLayout(...boxIds)
     },
     beforeDestroy() {
@@ -146,12 +143,12 @@ export default {
             return {
                 minWidth: (
                     (layoutSize.w * this.cellSize.w) +
-                    ((layoutSize.w - 1) * this.margin) +
+                    ((layoutSize.w - 1) * this.cellSize.margin) +
                     (2 * this.outerMargin)
                 ) + 'px',
                 minHeight: (
                     (layoutSize.h * this.cellSize.h) +
-                    ((layoutSize.h - 1) * this.margin) +
+                    ((layoutSize.h - 1) * this.cellSize.margin) +
                     (2 * this.outerMargin)
                 ) + 'px'
             }
@@ -199,14 +196,14 @@ export default {
             }
 
             if (baseOn) {
-                let pixels = layoutHandler.positionToPixels(baseOn.boxLayout.position, this.cellSize, this.margin, this.outerMargin)
+                let pixels = layoutHandler.positionToPixels(baseOn.boxLayout.position, this.cellSize, this.cellSize.margin, this.outerMargin)
                 pixels.x += baseOn.offset.x
                 pixels.y += baseOn.offset.y
                 return pixels
             }
 
             var boxLayout = this.getBoxLayoutById(id)
-            return layoutHandler.positionToPixels(boxLayout.position, this.cellSize, this.margin, this.outerMargin)
+            return layoutHandler.positionToPixels(boxLayout.position, this.cellSize, this.cellSize.margin, this.outerMargin)
         },
         isBoxVisible(id) {
             var boxLayout = this.getBoxLayoutById(id)
@@ -214,8 +211,8 @@ export default {
         },
         getPositionByPixel(x, y) {
             return {
-                x: Math.round(x / (this.cellSize.w + this.margin)),
-                y: Math.round(y / (this.cellSize.h + this.margin))
+                x: Math.round(x / (this.cellSize.w + this.cellSize.margin)),
+                y: Math.round(y / (this.cellSize.h + this.cellSize.margin))
             }
         },
         updateLayout(layout) {
@@ -225,7 +222,7 @@ export default {
             this.enableResizing(box)
             this.enableDragging(box)
             if (this.isMounted && this.autoAddLayoutForNewBox) {
-                this.createBoxLayout(box.$props.boxId)
+                this.createBoxLayout(box.$props.widget.id)
             }
         },
         unregisterBox(box) {
@@ -255,9 +252,9 @@ export default {
             }
 
             box.$on('dragStart', evt => {
-                var widget = this.getBoxLayoutById(box.boxId)
+                var widget = this.getBoxLayoutById(box.widget.id)
                 // this.$emit('dragStart', widget)
-                if (widget.pinned) {
+                if (!widget || widget.pinned) {
                     return
                 }
                 isDragging = true
@@ -359,8 +356,8 @@ export default {
                 }
             }
             box.$on('resizeStart', evt => {
-                var widget = this.getBoxLayoutById(box.boxId)
-                if (widget.pinned) {
+                var widget = this.getBoxLayoutById(box.widget.id)
+                if (!widget || widget.pinned) {
                     return
                 }
                 isResizing = true
