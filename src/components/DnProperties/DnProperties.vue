@@ -1,4 +1,5 @@
-<template>
+<template functional>
+  <!-- note functional above -->
   <div>
     <slot></slot>
   </div>
@@ -6,7 +7,8 @@
 
 <script>
 export default {
-    name: 'd-dashboard'
+  // change this!
+  name: 'dn-properties'
 }
 </script>
 

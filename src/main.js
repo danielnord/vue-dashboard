@@ -1,7 +1,6 @@
-import Vue from 'vue'
 import * as components from './components'
 
-const ComponentLibrary = {
+const ComponentLibary = {
   install(Vue, options = {}) {
     // components
     for (const componentName in components) {
@@ -12,8 +11,8 @@ const ComponentLibrary = {
   }
 }
 
-export default ComponentLibrary
+export default ComponentLibary
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(ComponentLibrary)
+  window.Vue.use(ComponentLibary)
 }

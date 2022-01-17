@@ -1,0 +1,139 @@
+.grid {
+    border: 2px solid #b00;
+    height: 200px;
+    &:not(.gallery) {
+        .header {
+            cursor: default;
+        }
+        .icon {
+            &.edit, &.close, &.resize-handle {
+                display: none !important;
+            }
+        }
+        .resize-handle {
+            display: none !important;
+        }
+    }
+}
+
+.widget {
+    h3 {
+        margin-top: 0;
+    }
+    &.notConfigured {
+        background: $notConfigured_gradient;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background: $hover_gradient;
+        }
+    }
+}
+
+.dn-grid-widget {
+    .theme {
+        background: $grey_gradient;
+        h1, h3, p {
+            opacity: 0.9;
+        }
+
+        div {
+            opacity: 0.9;
+        }
+        &.blue {
+            background: $blue_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.pink {
+            background: $pink_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.red {
+            background: $red_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.purple {
+            background: $purple_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.yellow {
+            background: $yellow_gradient;
+            h1, h3, p {
+                color: $sip_black;
+            }
+        }
+
+        &.green {
+            background: $green_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.orange {
+            background: $orange_gradient;
+            h1, h3, p {
+                color: $sip_black;
+            }
+
+            div {
+                color: $sip_black;
+            }
+        }
+
+        &.black {
+            background: $black_gradient;
+            h1, h3, p {
+                color: $sip_white;
+            }
+
+            div {
+                color: $sip_white;
+            }
+        }
+
+        &.white {
+            background: $grey_gradient;
+            h1, h3, p {
+                color: $sip_black;
+            }
+
+            div {
+                color: $sip_black;
+            }
+        }
+    }
+}

@@ -1,0 +1,268 @@
+// Dimensions & Transitions
+$none:                        0   !default;
+$padding:                     8px !default;
+
+$transition-linear:           linear !default;
+$transition-bezier:           cubic-bezier(0.34, 1.61, 0.7, 1) !default;
+$transition-ease:             ease 0s;
+$transition-ease-in:          ease-in !default;
+$transition-ease-out:         ease-out !default;
+
+$font-size-base:               14px !default;
+$font-size-small:              12px !default;
+$font-size-medium:             16px !default;
+$font-size-navbar:             16px !default;
+
+$font-weight-light:          300 !default;
+$font-weight-normal:         400 !default;
+$font-weight-semi:           500 !default;
+$font-weight-bold:           600 !default;
+
+// Svep colors
+$main_1:                   #56afb8;
+$main_2:                   #f1f1f1;
+$main_3:                   #996cac;
+$main_3_hover:             #963bc5;
+$main_4:                   #364557;
+$main_4_light:             #465567;
+
+$secondary_1:              #007774;
+$secondary_1_light:        #8ececb;
+$secondary_2:              #ffd419;
+$secondary_2_opacity:      rgba(255, 212, 25, 0.5);
+$secondary_3:              #aa4944;
+$secondary_3_opacity:      rgba(170, 73, 68, 0.8);
+$secondary_3_light:        #ffcdcd;
+$secondary_4:              #4f7e4c;
+$secondary_4_dark:         #48a443;
+$secondary_4_opacity:      rgba(110, 170, 107, 0.5);
+$secondary_5:              #6a5faa;
+$secondary_6:              #2f85d3;
+
+
+
+$background_odd:           rgba(54,69,87,0.05);
+$background_light:          $main_2;
+$background_light_opacity: rgba(255, 255, 255, 0.9);
+$background_dark_opacity:  rgba(0, 0, 0, 0.04);
+$background_header:        #d6dadd;
+
+$border_light:             hsla(61, 1%, 76%, 1);
+$shadow:                   hsla(61, 1%, 76%, 0.73);
+$shadow_secondary:         hsla(0,0%,4%,.1);
+
+$white:                    #fff;
+$black:                    #000;
+$grey:                     rgba(0,0,0,.54);
+$dark:                      $main_4;
+$lightgrey:                lightgrey;
+$darkgrey:                 darkgray;
+
+$loading_pulse_0:            rgba(165, 165, 165, 0.1);
+$loading_pulse_50:           rgba(165, 165, 165, 0.3);
+$loading_pulse_100:          rgba(165, 165, 165, 0.1);
+
+.error {
+    background-color: rgba(170, 73, 68, 0.6) !important;
+}
+
+$inputBackground:           rgba(255, 255, 255, 0.3);
+
+$boxShadowLevel1:           5px 5px 10px #cecece,
+                            -5px -5px 10px #ffffff;
+$boxShadowLevel2:           8px 8px 16px #cecece,
+                            -8px -8px 16px #ffffff;
+$boxShadowLevel3:           12px 12px 24px #cecece,
+                            -12px -12px 24px #ffffff;
+$boxShadowLevel4:           18px 18px 36px #cecece,
+                            -18px -18px 36px #ffffff;
+$boxShadowLevel5:           0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+
+// Colors
+
+$none:                       0   !default;
+
+$white-color:                #FFFFFF !default;
+$white-bg:                   #FFFFFF !default;
+
+$bg:                         #eff1f2 !default;
+$smoke-bg:                   #F5F5F5 !default;
+
+$light-gray:                 #f2f2ff !default;
+$medium-gray:                #DDDDDD !default;
+$medium-dark-gray:           #AAAAAA !default;
+$dark-gray:                  #9A9A9A !default;
+
+$transparent-bg:             transparent !default;
+
+$primary:                    #662f90 !default;
+
+$red:                        #EA5B0C !default;
+$red_opacity:                  rgba(255, 0, 0, 0.3) !important;
+$yellow:                     #F9B122 !default;
+$green:                      #72D468 !default;
+$light-blue:                 #D2DFE2 !default;
+
+$transparent-bg:             transparent !default;
+
+$default-color:              #888888 !default;
+$default-bg:                 #888888 !default;
+$default-states-color:       #777777 !default;
+
+$primary-color:              #004d5f !default;
+$primary-bg:                 #004d5f !default;
+$primary-states-color:       #1D62F0 !default;
+
+$success-color:              #87CB16 !default;
+$success-bg:                 #87CB16 !default;
+$success-states-color:       #049F0C !default;
+
+$info-color:                 #ea5b0c !default;
+$info-bg:                    #ea5b0c !default;
+
+$default-color-top:	         #d9d9d9 !default;
+$default-color-bottom:  	 #909297 !default;
+
+$blue-color-top: 		     #004d5f;
+$blue-color-bottom: 	     #004d5f;
+
+$azure-color-top:   	     #6ac2ee;
+$azure-color-bottom:         #51A9D5;
+
+$black-color-top:	 	     #787878;
+$black-color-bottom: 	     #343434;
+
+/* Svep IoT Colors */
+$sip_white: #fefefe;
+$sip_grey: #99a;
+$sip_darkgrey: #99a;
+$sip_black: #000000;
+$sip_inactiveItem: #aaa;
+$sip_bodyBackground: #46116d;
+$sip_background: #edf4f7;
+$sip_subMenuBackground: #c6c5ce;
+
+$sip_color2: #662f90;
+$sip_color3: #8a5fa8;
+$sip_color4: #53c674;
+$sip_color5: #16b57e;
+$sip_color5_light: #80cda2;
+$sip_color6: #178972;
+$sip_color7: #b42025;
+$sip_color8: #e5b52a;
+$sip_color9: #e6c91e;
+$sip_color10: #d28f29;
+$sip_color11: #070808;
+$sip_color12: #2d343f;
+$sip_color13: #272d38;
+$sip_hoverColor: rgba(125, 125, 255, 0.1);
+$sip_hoverColorLightBackground: rgba(47, 47, 100, 0.1);
+
+$sip_main1: $sip_color11;
+$sip_secondary:              $sip_color5;
+$sip_secondary_light:        $sip_color5_light;
+$red:                        $sip_color7;
+
+$mainButtonColor:           #fff !important;
+$mainButtonBackground:      $sip_color5 !important;
+$mainButtonBackgroundHover: $sip_color6 !important;
+
+$sip_backgroundDark_start: #80cda2;
+$sip_backgroundDark_end: #53c674;
+$sip_backgroundDark: linear-gradient(to bottom, $sip_backgroundDark_start , $sip_backgroundDark_end);
+
+$sip_backgroundLight_start: #ebedf2;
+$sip_backgroundLight_end: #dee3ec;
+$sip_backgroundLight: linear-gradient(to bottom, $sip_backgroundLight_start , $sip_backgroundLight_end);
+
+$sip_ok: $sip_color4;
+$sip_warning: $sip_color8;
+$sip_error: $sip_color7;
+$sip_inactive: $sip_white;
+$sip_scrapped: $sip_color12;
+$sip_technical: $sip_color3;
+
+// Gradients
+$green_gradient: linear-gradient(to bottom, $sip_ok , $sip_color5);
+$yellow_gradient: linear-gradient(to bottom, $sip_warning , $sip_color9);
+$red_gradient: linear-gradient(to bottom, #b94e47, #c31425);
+$orange_gradient: linear-gradient(to bottom, #ebe0a1, #e1ad67, #e57750);
+$grey_gradient: linear-gradient(to bottom, #cfd3e0 , #ecedff);
+$purple_gradient: linear-gradient(to bottom, $sip_color2 , $sip_color3);
+$blue_gradient: linear-gradient(to bottom, $azure-color-top , $azure-color-bottom);
+$pink_gradient: linear-gradient(to bottom, #ff9da4 , #ee6085);
+$black_gradient: linear-gradient(to bottom, #313c5e , #161924);
+$hover_gradient: linear-gradient(to bottom, #ddd , #aaa);
+$notConfigured_gradient: linear-gradient(to bottom, #efefef , #ccc);
+
+
+$sip_buttonPrimary: $sip_color5;
+$sip_buttonPrimaryHover: $sip_color6;
+$sip_buttonSecondary: $sip_color12;
+$sip_buttonBorder: 2px solid $sip_color11;
+$sip_buttonColor: rgba(255,255,255,0.8);
+
+$sip_widget_shadow:0 5px 22px rgba(0,0,0,.2);
+$sip_menu_hover_shadow: rgba(0,0,50,.2);
+$sip_widget_edit_shadow:0 5px 22px rgba(0,77,95,0.7);
+$sip_button_shadow:rgba(0,0,0,.2);
+
+// Tables
+$table_odd: $white;
+$table_even: #f6f8f9;
+$table_highlight_odd: #00777379;
+$table_highlight_even: #059b9679;
+$table_hover: $sip_secondary;
+$table_header_background: $sip_color5;
+$table_header_color: rgba(0,0,0,.87);
+
+$table_odd_dark: #444;
+$table_even_dark: #333;
+
+// Inputs
+$sip_inputBackground: $table_even;
+
+// Dimensions & Transitions
+
+$padding-base-vertical:         8px !default;
+$padding-base-horizontal:      16px !default;
+$padding-small-vertical:        5px !default;
+
+$padding-zero:                   0px !default;
+
+$margin-bottom:                0 0 10px 0 !default;
+
+$font-size-minimum:            10px !default;
+$font-size-base:               14px !default;
+$font-size-small:              12px !default;
+$font-size-medium:             16px !default;
+$font-size-navbar:             16px !default;
+
+$font-weight-light:          300 !default;
+$font-weight-normal:         400 !default;
+$font-weight-semi:           500 !default;
+$font-weight-bold:           600 !default;
+
+// $navbar-width:               260px;
+$mainPanel-width:            calc(100% - 260px) !default;
+$navbar-height:              64px !default;
+
+
+
+$border-radius-top:        10px 10px 0 0 !default;
+$border-radius-bottom:     0 0 10px 10px !default;
+
+$transition-linear:                   linear !default;
+$transition-bezier:                   cubic-bezier(0.34, 1.61, 0.7, 1) !default;
+$transition-ease:                     ease 0s;
+$transition-ease-in:                  ease-in !default;
+$transition-ease-out:                 ease-out !default;
+
+$topbar-x:             topbar-x !default;
+$topbar-back:          topbar-back !default;
+$bottombar-x:          bottombar-x !default;
+$bottombar-back:       bottombar-back !default;
+
+$white-navbar:              rgba(#FFFFFF, .96);
+
