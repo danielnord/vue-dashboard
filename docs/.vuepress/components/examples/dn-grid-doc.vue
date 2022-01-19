@@ -5,7 +5,6 @@
             :readOnly="readOnly"
             @changed="changed"
         >
-            This is slot content 4.
         </dn-grid>
         <button @click="readOnly = !readOnly">{{ readOnly ? 'Edit grid' : 'Read only grid' }}</button>
         <button @click="addWidget">Add widget</button>
@@ -36,7 +35,7 @@ export default {
                     w: 4
                 },
                 title: 'Widget 1',
-                type: 'DemoWidget',
+                component: 'DemoWidget',
                 pinned: false
             }), new Widget({
                 id: '1234-1',
@@ -47,7 +46,7 @@ export default {
                     w: 2
                 },
                 title: 'Widget 2',
-                type: 'DemoWidget',
+                component: 'DemoWidget',
                 pinned: false
             })],
             readOnly: true
@@ -55,7 +54,7 @@ export default {
     },
     methods: {
         changed(grid) {
-            console.log(grid)
+            this.layout = grid
         },
         async addWidget() {
             const w = new Widget({
@@ -67,10 +66,11 @@ export default {
                     w: 2
                 },
                 title: 'Widget ' + (this.layout.length + 1),
-                type: 'DemoWidget',
+                component: 'DemoWidget',
                 pinned: false
             })
-            this.layout.push(w)
+            w.isProcessed = true // To update positions for other widgets
+            this.$set(this.layout, this.layout.length, w)
         }
     }
 }

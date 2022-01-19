@@ -148,7 +148,7 @@ export default {
             if (!this.widget) {
                 return null
             }
-            let widgetClass = this.widget.type.charAt(0).toLowerCase() + this.widget.type.slice(1) + ' '
+            let widgetClass = this.widget.component.charAt(0).toLowerCase() + this.widget.component.slice(1) + ' '
             let result = {
                 notConfigured: !this.hasValidData,
                 light: this.light,

@@ -174,6 +174,12 @@ export default {
             this.updateLayout(updatedLayout)
             layoutHandler.commit()
         },
+        async updatePositions(widget) {
+            const updatedLayout = await layoutHandler.updatePositions(widget)
+            this.processingLayout = false
+            this.updateLayout(updatedLayout)
+            layoutHandler.commit()
+        },
         commitLayout() {
             this.doCommitLayout = true
             layoutHandler.setNewLayout(this.layout)

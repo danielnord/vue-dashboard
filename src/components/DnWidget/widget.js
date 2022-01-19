@@ -16,7 +16,7 @@ export default class Widget {
         this.title = box.title
         this.data = box.data
         this.description = box.description
-        this.type = box.type
+        this.component = box.component
         this.originalPosition = Object.assign({}, box.position)
         this.isProcessed = false // If set to true this box will be ignored when moving around boxes
     }

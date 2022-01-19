@@ -3,7 +3,7 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'DN Dashboard Library',
-      description: 'Documentation site for the Vue component library plugin'
+      description: 'Documentation site for the Vue Dashboard component library plugin'
     }
   },
   themeConfig: {
@@ -42,8 +42,9 @@ module.exports = {
               title: 'Components',
               collapsable: false,
               children: [
-                  'standard-component',
-                  'dn-grid'
+                  // 'standard-component',
+                  'dn-grid',
+                  'dn-widget'
               ]
             }
           ]

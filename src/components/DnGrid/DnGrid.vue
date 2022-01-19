@@ -23,7 +23,7 @@
                     <div class="card">
                         <component class="widget-wrapper"
                             v-if="w.compatibility == null || w.compatibility == dashboardType"
-                            :is="w.type"
+                            :is="w.component"
                             :data="w"
                             :cellSize="cellSize"
                             @showProperties="showProperties({ widget: w })" />
@@ -115,7 +115,12 @@ export default {
     },
     watch: {
         'widgets.current': {
-            handler(to, from) {
+            async handler(to, from) {
+                const widget = to.find(w => w.isProcessed)
+                if (widget) {
+                    await this.$refs.layout.updatePositions(widget)
+                    widget.isProcessed = false
+                }
                 this.$emit('changed', to)
             }
         }
