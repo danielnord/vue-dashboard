@@ -1,6 +1,7 @@
 import * as components from './components'
+import Widget from './components/DnWidget/widget.js'
 
-const ComponentLibary = {
+const VueDashboard = {
   install(Vue, options = {}) {
     // components
     for (const componentName in components) {
@@ -11,8 +12,8 @@ const ComponentLibary = {
   }
 }
 
-export default ComponentLibary
+export { VueDashboard, Widget }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(ComponentLibary)
+  window.Vue.use(VueDashboard)
 }

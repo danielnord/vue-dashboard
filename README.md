@@ -5,6 +5,22 @@
 I was looking for a grid library that was rather close to how the Azure portal dashboard worked. But boxes that collided with a dragging box didn't move how I wanted, in dnd-grid, so this is an implementation solving my issue.
 
 ## Getting Started
+### Add imports
+```js
+/// main.js
+import './plugins/vuedashboard'
+```
+
+```js
+/// plugins/vuedashboard
+import Vue from 'vue'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import { VueDashboard } from 'dn-vue-dashboard'
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
+Vue.use(VueDashboard)
+import 'dn-vue-dashboard/dist/dn-vue-dashboard.css'
+```
 ### template
 ```html
 <dn-grid
@@ -34,6 +50,11 @@ layout.push(new Widget({
 ## Project setup
 
 ```
+npm install bootstrap-icons --save
+npm install bootstrap-vue --save
+```
+
+```
 yarn install
 ```
 
@@ -47,6 +68,12 @@ yarn docs:dev
 
 ```
 yarn docs:build
+```
+
+## NPM
+Deploy to NPM
+```
+yarn publish
 ```
 
 ## TODO
