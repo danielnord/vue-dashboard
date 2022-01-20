@@ -3,11 +3,14 @@
         <dn-grid
             :layout="layout"
             :readOnly="readOnly"
+            :cellSize="cellSize"
             @changed="changed"
         >
         </dn-grid>
         <button @click="readOnly = !readOnly">{{ readOnly ? 'Edit grid' : 'Read only grid' }}</button>
         <button @click="addWidget">Add widget</button>
+        cellSize.w: <input type="text" v-model.number="cellSize.w" />
+        cellSize.h: <input type="text" v-model.number="cellSize.h" />
     </div>
 </template>
 <script>
