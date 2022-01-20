@@ -1,6 +1,6 @@
 {
   "name": "dn-vue-dashboard",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "main": "dist/dn-vue-dashboard.umd.min.js",
   "unpkg": "dist/dn-vue-dashboard.umd.min.js",
