@@ -1,26 +1,25 @@
 {
   "name": "dn-vue-dashboard",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": false,
   "main": "dist/dn-vue-dashboard.umd.min.js",
   "unpkg": "dist/dn-vue-dashboard.umd.min.js",
   "jsdelivr": "dist/dn-vue-dashboard.umd.min.js",
   "author": "Daniel Nord",
   "license": "MIT",
-   "description": "",
-   "files": [
-     "dist/*",
-     "src/*"
-   ],
-   "homepage": "https://www.svep.se",
-   "repository": {
-     "type": "git",
-     "url": "https://github.com/danielnord/vue-dashboard.git"
-   },
-   "bugs": {
-     "url": "https://github.com/danielnord/vue-dashboard/issues"
-   },
-
+  "description": "",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "homepage": "https://www.svep.se",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielnord/vue-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielnord/vue-dashboard/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name dn-vue-dashboard src/main.js",
@@ -44,7 +43,8 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.7.2",
-    "bootstrap-vue": "^2.21.2"
+    "bootstrap-vue": "^2.21.2",
+    "eslint-plugin-prettier": "^4.0.0"
   },
   "keywords": [
     "vue",
